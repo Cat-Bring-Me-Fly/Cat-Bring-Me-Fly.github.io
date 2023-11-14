@@ -24,8 +24,8 @@
     <label for="leverage">Leverage:</label>
     <input type="number" id="leverage" name="leverage"><br><br>
 
-    <label for="quantity">Quantity:</label>
-    <input type="number" id="quantity" name="quantity"><br><br>
+    <label for="investment">Investment:</label>
+    <input type="number" id="investment" name="investment"><br><br>
 
     <label for="scriptRatio">Script Ratio:</label>
     <input type="number" id="scriptRatio" name="scriptRatio"><br><br>
@@ -43,10 +43,10 @@
     <script>
         function calculate() {
             var leverage = parseFloat(document.getElementById('leverage').value) || 0;
-            var quantity = parseFloat(document.getElementById('quantity').value) || 0;
+            var investment = parseFloat(document.getElementById('investment').value) || 0;
             var scriptRatio = parseFloat(document.getElementById('scriptRatio').value) || 0;
 
-            var A = leverage * quantity * scriptRatio;
+            var A = leverage * investment * scriptRatio;
             var B = A * 2;
             var C = B * 2;
             var D = C * 2;
