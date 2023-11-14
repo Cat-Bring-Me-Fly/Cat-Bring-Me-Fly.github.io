@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        /* Optional: Add your CSS styling here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label, input {
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calculator</h2>
+
+    <label for="leverage">Leverage:</label>
+    <input type="number" id="leverage" name="leverage"><br><br>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity"><br><br>
+
+    <label for="scriptRatio">Script Ratio:</label>
+    <input type="number" id="scriptRatio" name="scriptRatio"><br><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <h3>Results</h3>
+    <p>Long: <span id="long"></span></p>
+    <p>Long_0: <span id="long_0"></span></p>
+    <p>Long_1: <span id="long_1"></span></p>
+    <p>Long_2: <span id="long_2"></span></p>
+    <p>Long_3: <span id="long_3"></span></p>
+    <p>Total: <span id="total"></span></p>
+
+    <script>
+        function calculate() {
+            var leverage = parseFloat(document.getElementById('leverage').value) || 0;
+            var quantity = parseFloat(document.getElementById('quantity').value) || 0;
+            var scriptRatio = parseFloat(document.getElementById('scriptRatio').value) || 0;
+
+            var A = leverage * quantity * scriptRatio;
+            var B = A * 2;
+            var C = B * 2;
+            var D = C * 2;
+            var E = D * 2;
+            var F = A + B + C + D + E;
+
+            document.getElementById('long').innerText = A.toFixed(2);
+            document.getElementById('long_0').innerText = B.toFixed(2);
+            document.getElementById('long_1').innerText = C.toFixed(2);
+            document.getElementById('long_2').innerText = D.toFixed(2);
+            document.getElementById('long_3').innerText = E.toFixed(2);
+            document.getElementById('total').innerText = F.toFixed(2);
+        }
+    </script>
+</body>
+</html>
